@@ -53,7 +53,7 @@ epicsEnvSet("NELEMENTS", "12582912")
 ### pointGreyConfig(const char *portName, int cameraId, int traceMask, int memoryChannel,
 ###                 int maxBuffers, size_t maxMemory, int priority, int stackSize)
 epicsEnvSet("CAMERA_ID", "17280203")
-epicsEnvSet("PREFIX", "PG1:")
+epicsEnvSet("PREFIX", "PG4:")
 pointGreyConfig("$(PORT)", $(CAMERA_ID), 0x1, 0)
 
 asynSetTraceIOMask($(PORT), 0, 2)
