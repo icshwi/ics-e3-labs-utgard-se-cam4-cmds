@@ -6,6 +6,7 @@ require sequencer,2.1.21+
 require sscan,1339922+
 require calc,3.7.0+
 require autosave,5.9.0+
+require iocStats,ae5d083
 
 epicsEnvSet("CAMERA_ID", "18457601")
 epicsEnvSet("AREA", "labs-utg-se")
@@ -69,6 +70,7 @@ epicsEnvSet(PREFIX, "$(PREFIX_PV)")
 < $(ADCORE)/../cmds/commonPlugins.cmd
 
 iocshLoad("$(autosave_DIR)/autosave.iocsh")
+iocshLoad("$(iocStats_DIR)/iocStats.iocsh")
 
 iocInit()
 
