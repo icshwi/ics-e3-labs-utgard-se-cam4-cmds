@@ -65,9 +65,7 @@ NDStdArraysConfigure("Image1", 5, 0, $(PORT), 0, 0)
 dbLoadRecords("NDStdArrays.template", "P=$(PREFIX_PV),R=$(IMAGE),PORT=Image1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT),TYPE=Int16,FTVL=SHORT,NELEMENTS=$(NELEMENTS)")
 
 ### Load all other plugins using commonPlugins.cmd
-
-epicsEnvSet(PREFIX, "$(PREFIX_PV)")
-< $(ADCORE)/../cmds/commonPlugins.cmd
+iocshLoad("$(ADCore_DIR)/adCommPlugins.iocsh", "PREFIX=$(PREFIX_PV),UNIT=1,PORT=$(PORT),QSIZE=$(QSIZE),XSIZE=$(XSIZE),YSIZE=$(YSIZE),NCHANS=$(NCHANS),CBUFFS=$(CBUFFS)")
 
 iocshLoad("$(autosave_DIR)/autosave.iocsh")
 iocshLoad("$(iocStats_DIR)/iocStats.iocsh")
